@@ -1,0 +1,13 @@
+{
+  "@class": "org.apereo.cas.services.RegexRegisteredService",
+  "serviceId": "^(https|imaps|http)://.*",
+  "name": "Fui",
+  "theme": "fui",
+  "id": 10000003,
+  "description": "Fui cas service",
+  "evaluationOrder": 3,
+  "attributeReleasePolicy" : {
+    "@class" : "org.apereo.cas.services.ReturnAllowedAttributeReleasePolicy",
+    "allowedAttributes" : [ "java.util.ArrayList", [ "id", "cname", "ename", "erased", "loginCount", "menuType", "style" ] ]
+  }
+}

@@ -1,0 +1,1 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.fui.cas.capcha.ValidateWebflowConfiguration,com.fui.cas.capcha.CaptchaConfiguration

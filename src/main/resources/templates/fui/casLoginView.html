@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <link rel="icon" th:href="@{/app.ico}" type="image/x-icon"/>
+    <title th:text="#{cas.login.pagetitle}"></title>
+    <script type="text/javascript" src="webjars/fui/public/common/fui/jquery/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="webjars/fui/public/common/fui/fui.js"></script>
+    <script type="text/javascript" src="webjars/fui/public/common/fui/fui-ext.js"></script>
+    <script type="text/javascript" src="webjars/fui/public/common/fui/common.js"></script>
+    <script type="text/javascript" src="webjars/fui/public/common/fui/json2.js"></script>
+    <link rel="stylesheet" type="text/css" href="webjars/fui/public/css/login.css"/>
+    <link rel="stylesheet" type="text/css" href="webjars/fui/public/common/fui/themes/pact/fui.css"/>
+    <link rel="stylesheet" type="text/css" href="webjars/fui/public/common/fui/themes/pact/common.css"/>
+    <link rel="stylesheet" type="text/css" href="webjars/fui/public/common/fui/themes/pact/skin.css"/>
+    <link rel="stylesheet" type="text/css" href="webjars/fui/public/common/fui/themes/pact/icons.css"/>
+    <style type="text/css">
+        .mg_r_rand{
+            margin-top: -20px;
+            margin-right: -136px;
+        }
+    </style>
+</head>
+
+<body class="background">
+    <div class="login_body">
+        <form id="loginForm" class="fui-form" method="post" th:object="${credential}">
+            <div><img src="webjars/fui/public/mainframe/images/login/logo.png" class="pos_rel l_186 t_-31"></div>
+            <div class="mg_0_auto w_510 pos_rel l_255">
+                <div style="text-align: center;"><b style="color: red;">测试用户： </b><span style="color: green;">zhangsan/888888</span> </div>
+                <div style="text-align: center;">
+                    <span style="font-weight:bold;font-size:20px">jcoffee</span>
+                    <span style="font-size:12px">框架研发 [演示环境]</span>
+                </div>
+                <div class="clear"></div>
+                <div style="text-align: center;color: red;" th:if="${#fields.hasErrors('*')}">
+                    <span th:each="err : ${#fields.errors('*')}" th:utext="${err}"/>
+                </div>
+                <div class="clear"></div>
+                <div class="login" style="padding:0px 0px 30px 0px;">
+                    <div class="login_box">
+                        <div class="box">
+                            <div class="text f_l mg_t_21">
+                                <div class="f_l"><img src="webjars/fui/public/mainframe/images/login/user.png" class="mg_l_19 mg_r_10" /></div>
+                                <div class="box_con f_l" th:unless="${openIdLocalId}">
+                                    <input class="fui-textbox" id="username" name="username" requiredErrorText="请输入用户帐号..." style="width:100%;" required="true"/>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                            <div class="text f_l mg_t_21">
+                                <div class="f_l"><img src="webjars/fui/public/mainframe/images/login/password.png" class="mg_l_20 mg_r_10" style="margin-left:22px;" /></div>
+                                <div class="box_con f_l">
+                                    <input class="fui-password" id="password" name="password" requiredErrorText="请输入密码..." style="width:100%;" required="true"/>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                            <div class="icon_rand">
+                                <div class="text f_l mg_t_21">
+                                    <div class="f_l"><img src="webjars/fui/public/mainframe/images/login/rand_u26.png" class="mg_l_20 mg_r_10" /></div>
+                                    <div class="box_con f_l">
+                                        <input class="fui-textbox" id="captcha" name="captcha" requiredErrorText="请输入验证码..." style="width:100%;" required="true"/>
+                                    </div>
+                                    <img title="单击更换验证码" th:src="@{/captchacode}" class="f_r color_8a8a8a mg_r_rand" onclick="loadImage(this)" />
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                            <div class="a_c">
+                                <input class="login_btn" type="submit" value="登录" style="width:100%;background-color:#FBAC20;border:0;"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" name="execution" th:value="${flowExecutionKey}"/>
+            <input type="hidden" name="_eventId" value="submit"/>
+            <input type="hidden" name="geolocation"/>
+        </form>
+    </div>
+</body>
+<script type="text/javascript" th:inline="javascript">
+    fui.parse();
+    var form = new fui.Form("#loginForm");
+    focusInput("username");
+
+    var i = [[#{screen.welcome.button.loginwip}]];
+    $("#loginForm").submit(function() {
+        form.validate();
+        if (form.isValid() === false) return false;
+        $(":submit").attr("disabled", true);
+        $(":submit").attr("value", i);
+        return true;
+    });
+
+    function focusInput(id) {
+        var el = document.getElementById(id);
+        if (el) el.focus();
+    }
+
+    function loadImage(e){
+        e.src = e.src + "?date=" + new Date().getTime();
+    }
+</script>
+</html>
