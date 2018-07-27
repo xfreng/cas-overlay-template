@@ -19,8 +19,8 @@
             <param-value>110</param-value>
         </init-param>
         <init-param>
-            <param-name>kaptcha.image.height</param-name>
-            <param-value>39</param-value>
+            <param-name>kaptcha.textproducer.font.size</param-name>
+            <param-value>36</param-value>
         </init-param>
     </servlet>
     <servlet-mapping>
