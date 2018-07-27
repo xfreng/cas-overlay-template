@@ -20,7 +20,7 @@
         </init-param>
         <init-param>
             <param-name>kaptcha.image.height</param-name>
-            <param-value>49</param-value>
+            <param-value>39</param-value>
         </init-param>
     </servlet>
     <servlet-mapping>
