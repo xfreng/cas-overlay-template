@@ -57,6 +57,18 @@
             <type>war</type>
             <scope>runtime</scope>
         </dependency>
+        <!--引入rest认证相关 start -->
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-support-rest</artifactId>
+            <version>${cas.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-support-rest-authentication</artifactId>
+            <version>${cas.version}</version>
+        </dependency>
+        <!--引入rest认证相关 end -->
         <!-- 引入数据库认证相关 start-->
         <dependency>
             <groupId>org.apereo.cas</groupId>

@@ -1,6 +1,6 @@
 {
   "@class": "org.apereo.cas.services.RegexRegisteredService",
-  "serviceId": "^https://www.apereo.org",
+  "serviceId": "^(https|imaps|http)://www.apereo.org",
   "name": "Apereo",
   "theme": "apereo",
   "id": 10000002,

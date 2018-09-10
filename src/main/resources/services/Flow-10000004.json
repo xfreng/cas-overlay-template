@@ -1,11 +1,11 @@
 {
   "@class": "org.apereo.cas.services.RegexRegisteredService",
   "serviceId": "^(https|imaps|http)://.*",
-  "name": "Fui",
+  "name": "Flow",
   "theme": "fui",
-  "id": 10000003,
-  "description": "Fui cas service",
-  "evaluationOrder": 3,
+  "id": 10000004,
+  "description": "Flow cas service",
+  "evaluationOrder": 4,
   "attributeReleasePolicy": {
     "@class": "org.apereo.cas.services.ReturnAllowedAttributeReleasePolicy",
     "allowedAttributes": [
