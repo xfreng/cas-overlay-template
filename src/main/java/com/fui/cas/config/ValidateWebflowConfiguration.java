@@ -1,5 +1,6 @@
-package com.fui.cas.capcha;
+package com.fui.cas.config;
 
+import com.fui.cas.capcha.ValidateWebflowConfigurer;
 import org.apereo.cas.configuration.CasConfigurationProperties;
 import org.apereo.cas.pm.config.PasswordManagementConfiguration;
 import org.apereo.cas.web.flow.CasWebflowConfigurer;

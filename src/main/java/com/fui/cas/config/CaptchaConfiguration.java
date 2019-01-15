@@ -1,5 +1,7 @@
-package com.fui.cas.capcha;
+package com.fui.cas.config;
 
+import com.fui.cas.capcha.SessionCaptchaResultProvider;
+import com.fui.cas.capcha.ValidateLoginCaptchaAction;
 import org.apereo.cas.configuration.CasConfigurationProperties;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

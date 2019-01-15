@@ -4,7 +4,6 @@ import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.BooleanUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apereo.cas.util.crypto.DefaultPasswordEncoder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -15,7 +14,7 @@ import java.nio.charset.Charset;
  * @Author sf.xiong on 2018-07-12.
  */
 public class CustomPasswordEncoder implements PasswordEncoder {
-    private static final Logger LOGGER = LoggerFactory.getLogger(DefaultPasswordEncoder.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(CustomPasswordEncoder.class);
     private String encodingAlgorithm = "MD5";
     private String characterEncoding = "UTF-8";
 
