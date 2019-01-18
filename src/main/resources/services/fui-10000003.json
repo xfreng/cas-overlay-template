@@ -1,6 +1,6 @@
 {
   "@class": "org.apereo.cas.services.RegexRegisteredService",
-  "serviceId": "^(https|imaps|http)://182.61.14.222:8088.*",
+  "serviceId": "^(https|imaps|http)://www.xfreng.com.*",
   "name": "fui",
   "theme": "fui",
   "id": 10000003,
