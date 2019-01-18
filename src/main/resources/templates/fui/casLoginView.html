@@ -81,20 +81,21 @@
 </body>
 <script type="text/javascript" th:inline="javascript">
     fui.parse();
-    var form = new fui.Form("#loginForm");
+    let form = new fui.Form("#loginForm");
     focusInput("username");
 
-    var i = [[#{screen.welcome.button.loginwip}]];
+    let i = [[#{screen.welcome.button.loginwip}]];
     $("#loginForm").submit(function() {
         form.validate();
         if (form.isValid() === false) return false;
-        $(":submit").attr("disabled", true);
-        $(":submit").attr("value", i);
+        let formObj = $(":submit");
+        formObj.attr("disabled", true);
+        formObj.attr("value", i);
         return true;
     });
 
     function focusInput(id) {
-        var el = document.getElementById(id);
+        let el = document.getElementById(id);
         if (el) el.focus();
     }
 

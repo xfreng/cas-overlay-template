@@ -82,31 +82,39 @@
         </div>
     </div>
     <div class="login-footer">
-        <p>© 2018 <a href="javascript:void(0);" target="_blank">xfreng版权所有</a></p>
+        <p>© <label id="year"></label> <a href="javascript:void(0);" target="_blank">xfreng&nbsp;版权所有</a></p>
     </div>
 </div>
 </body>
 <script type="text/javascript" th:inline="javascript">
     fui.parse();
-    var form = new fui.Form("#loginForm");
+    let form = new fui.Form("#loginForm");
     focusInput("username");
+    setYear();
 
-    var i = [[#{screen.welcome.button.loginwip}]];
+    let i = [[#{screen.welcome.button.loginwip}]];
     $("#loginForm").submit(function() {
         form.validate();
         if (form.isValid() === false) return false;
-        $(":submit").attr("disabled", true);
-        $(":submit").attr("value", i);
+        let formObj = $(":submit");
+        formObj.attr("disabled", true);
+        formObj.attr("value", i);
         return true;
     });
 
     function focusInput(id) {
-        var el = document.getElementById(id);
+        let el = document.getElementById(id);
         if (el) el.focus();
     }
 
     function loadImage(e){
         e.src = e.src + "?date=" + new Date().getTime();
+    }
+
+    function setYear(){
+        let dt = new Date();
+        let strYear = dt.getFullYear();
+        $("#year").text(strYear);
     }
 </script>
 </html>
