@@ -40,7 +40,7 @@
                 </div>
             </div>
             <div class="clear"></div>
-            <form id="loginForm" class="form-signin" method="post" th:object="${credential}">
+            <form id="loginForm" class="form-signin" th:action="@{/login}" method="post" th:object="${credential}">
                 <div style="text-align: center;color: red;" th:if="${#fields.hasErrors('*')}">
                     <span th:each="err : ${#fields.errors('*')}" th:utext="${err}"/>
                 </div>

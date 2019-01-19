@@ -26,7 +26,7 @@
 
 <body class="background">
     <div class="login_body">
-        <form id="loginForm" class="fui-form" method="post" th:object="${credential}">
+        <form id="loginForm" class="fui-form" th:action="@{/login}" method="post" th:object="${credential}">
             <div><img src="webjars/fui/public/mainframe/images/login/logo.png" class="pos_rel l_186 t_-31"></div>
             <div class="mg_0_auto w_510 pos_rel l_255">
                 <div style="text-align: center;"><b style="color: red;">测试用户： </b><span style="color: green;">zhangsan/888888</span> </div>

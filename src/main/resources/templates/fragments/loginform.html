@@ -7,7 +7,7 @@
         </span>
     </div>
 
-    <form method="post" id="fm1" th:object="${credential}">
+    <form method="post" id="fm1" th:action="@{/login}" th:object="${credential}">
 
         <div class="alert alert-danger" th:if="${#fields.hasErrors('*')}">
             <span th:each="err : ${#fields.errors('*')}" th:utext="${err}"/>
@@ -75,7 +75,7 @@
         </section>
         <section class="row">
             <div>
-                <img id="captchaimg" th:src="captchacode" onclick="refreshcaptchacode(this)" th:title="#{screen.welcome.label.rand.change}"/>
+                <img id="captchaimg" th:src="@{/captchacode}" onclick="refreshcaptchacode(this)" th:title="#{screen.welcome.label.rand.change}"/>
                 <a href="javascript:void(0);" onclick="refreshcaptchacode($('#captchaimg').get(0));" style="width:130px;height:30px;">
                     <span style="margin-left:20px;" th:utext="#{screen.welcome.label.rand.change}"></span>
                 </a>
@@ -128,7 +128,7 @@
             return true;
         });
         function refreshcaptchacode(obj) {
-            obj.setAttribute("src", "captchacode?date=" + new Date().getTime());
+            obj.setAttribute("src", obj.src + "?date=" + new Date().getTime());
         }
     </script>
     <div th:replace="fragments/loginsidebar"/>
