@@ -1,10 +1,10 @@
 {
   "@class": "org.apereo.cas.services.RegexRegisteredService",
   "serviceId": "^(https|imaps|http)://admin.xfreng.com.*",
-  "name": "fui-admin",
-  "theme": "fui-admin",
+  "name": "admin",
+  "theme": "admin",
   "id": 10000005,
-  "description": "fui-admin cas service",
+  "description": "admin cas service",
   "evaluationOrder": 5,
   "attributeReleasePolicy": {
     "@class": "org.apereo.cas.services.ReturnAllowedAttributeReleasePolicy",

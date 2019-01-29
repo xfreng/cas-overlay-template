@@ -1,0 +1,24 @@
+{
+  "@class": "org.apereo.cas.services.RegexRegisteredService",
+  "serviceId": "^(https|imaps|http)://admin.fudaansu.com.*",
+  "name": "fuiAdmin",
+  "theme": "fuiAdmin",
+  "id": 10000006,
+  "description": "fuiAdmin cas service",
+  "evaluationOrder": 6,
+  "attributeReleasePolicy": {
+    "@class": "org.apereo.cas.services.ReturnAllowedAttributeReleasePolicy",
+    "allowedAttributes": [
+      "java.util.ArrayList",
+      [
+        "id",
+        "cname",
+        "ename",
+        "erased",
+        "loginCount",
+        "menuType",
+        "style"
+      ]
+    ]
+  }
+}
